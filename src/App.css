@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+}
+
+.Header {
+  grid-column: span 2;
+  width: 100%;
+}
+
+.MyTeams {
+  grid-row: span 2;
+}
+
+.Footer {
+  width: 100%;
+  grid-column: span 2;
+}
