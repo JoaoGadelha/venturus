@@ -1,0 +1,74 @@
+.container {
+    background: #f7f3f7;
+    display: grid;
+    place-items: center;
+}
+
+.window {
+    background: white;
+    border-radius: 5px;
+    height: 80%;
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    padding-bottom: 200px;
+}
+
+.title {
+    color: #5a328d;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.saveBtn {
+    background: linear-gradient(#af4683, #7a2c7f);
+    width: 100%;
+    color: white;
+    font-weight: bold;
+    padding: 20px 0;
+    border-radius: 5px;
+    border: none;
+    font-size: 18px;
+    grid-column: span 2;
+}
+
+.grid1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.grid2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.p {
+    grid-column: span 2;
+    text-align: center;
+    
+}
+
+.formation {
+    height: 300px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.h1 {
+    font-size: 20px;
+}
+
+.field {
+    height: 200px;
+        background: greenyellow;
+        grid-column: span 2;
+    
+}
+
+.search {
+    
+}
+
+.resultWindow {
+    
+}

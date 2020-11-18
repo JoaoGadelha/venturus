@@ -1,0 +1,32 @@
+.container {
+    grid-row: span 2;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 30px auto;
+    place-items: center;
+    border-radius: 5px;
+    background: white;
+    padding: 20px;
+    margin: 0;
+    
+}
+
+.title {
+    color: #5a328d;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.newTeamBtn {
+    background: linear-gradient(#a8397a, #823381);
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+    justify-self: end;
+    box-shadow: 0 10px 20px rgba(206, 11, 206, 0.514);
+}
