@@ -22,7 +22,9 @@ createTeam.post('/', async (req, res) => {
         let fetchUsrInfo = await Usr.find({_id:req.body.id});
         fetchUsrInfo[0].teams.push(newTeam);
         let updateTeam = await Usr.updateOne({_id:req.body.id},{$set:{teams:fetchUsrInfo[0].teams}});
-        return res.json(updateTeam);
+        
+        fetchUsrInfo = await Usr.find({_id:req.body.id});
+        return res.json(fetchUsrInfo);
         //  let savedTeam = await newTeam.save();
         //return res.json(savedTeam);
 
