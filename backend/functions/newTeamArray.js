@@ -19,10 +19,10 @@ let newTeamArray = async () => {
     let playersArray = [];
     for (let i = 0; i < numPlayers; i++) {
         let newPlayer = {
-            name: playersNamesArray[i],
-            age: parseInt(Math.random() * 7 + 18, 10),
-            numberPicks: parseInt(Math.random() * 100, 10),
-            nacionality: countriesArray[parseInt((countriesArray.length - 1) * Math.random(), 10)]
+            name: playersNamesArray[i], //nome do jogador. Nomes sao fornecidos aleatoriamente pela API "names.drycodes"
+            age: parseInt(Math.random() * 22 + 18, 10), //idade do jogador entre 18 e 40 anos
+            numberPicks: parseInt(Math.random() * 20, 10), // numero de vezes que o jogador foi escolhido (entre 0 e 20 vezes)
+            nacionality: countriesArray[parseInt((countriesArray.length - 1) * Math.random(), 10)] // nacionalidade aleatoriamente escolhida do vetor fornecido pela API "REST Countries"
         }
         playersArray.push(newPlayer);
     }
