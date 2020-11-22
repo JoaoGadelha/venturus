@@ -3,7 +3,11 @@
 This project was developed as a job test for Venturus.
 
 ## The App
-The app was built with React.js and illustrates an interface for creating and configuring soccer teams. It is composed of two pages, one that displays all the teams the user has created, a board displaying average ages of players and another board displaying percentages of picks for a chosen team. The second page is opened whenever the user wants to create a new team or configure an already existing one. 
+The app was built with React.js and illustrates an interface for creating and configuring soccer teams. It is composed of two pages, one that displays all the teams the user has created, a board displaying average ages of players and another board displaying percentages of picks for a chosen team. The second page is opened whenever the user wants to create a new team or configure an already existing one, displaying input fields to define the team's name, a description of the team, tags, two radio buttons to define if the team is a fictional or real one and a website URL for the team. The user can also define the formation of the team and position of each player in the field. 
+
+## Implementation
+
+The implementation is composed of an App.js file, that calls all the other components in the app. The app contains 4 mains components, MyTeams, Top5, Statistics and Configure, where the three first components are present in the main page, and the last one is present in the configuration page.
 
 
 ## Available Scripts
