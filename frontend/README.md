@@ -33,3 +33,5 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
+## The App
+The app was built with React.js and illustrates a interface for creating and configuring soccer teams. It is composed of two pages, one that displays all the teams the user has created, a board displaying average ages of players and another board displaying percentages of picks for a chosen team. The second page is opened whenever the user wants to create a new team or configure an already existing one. 
