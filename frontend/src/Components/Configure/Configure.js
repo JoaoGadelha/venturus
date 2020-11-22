@@ -103,7 +103,7 @@ const Configure = (props) => {
 
     const submitTag = (e) => {
         console.log(e);
-        if (e.charCode === 13) {
+        if (e.charCode === 13 || e.charCode === 59) {
             let auxTags = [...tags];
             auxTags.push({ value: e.target.value, id: '_' + Math.random().toString(36).substr(2, 9) });
             setTags(auxTags);
