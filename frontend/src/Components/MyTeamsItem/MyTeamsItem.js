@@ -5,20 +5,28 @@ import { Context } from '../../Context'
 import { useHistory } from "react-router-dom"
 import { postData } from '../../commonFunctions'
 
+// represents each item from the MyTeams board in the main page
 const MyTeamsItem = (props) => {
+    // these variables are explained in the Context.js file
     let { setCreateTeam, setTeamID, teamID, clientData, setClientData } = useContext(Context);
+    // used to navigate between pages
     const history = useHistory();
+    // refs for the elements in this component
     let refContainer = useRef();
     let refTeamName = useRef();
     let refDescription = useRef();
     let refTools = useRef();
 
+    // checks if the user is using a phone to access the page or not.
     useEffect(() => {
         if (props.isMobile) {
             refContainer.current.style.display = 'block';
         }
     }, [])
 
+    // this snippet runs whenever teamID changes value,
+    // and is used to update color properties of elements
+    // in the MyTeams board in the main page
     useEffect(() => {
         if (!props.isMobile) {
             if (props.data.teamID === teamID) {
@@ -48,6 +56,7 @@ const MyTeamsItem = (props) => {
         // soccer field depend on the teamID update.
     }
 
+    // function used to delete elements in the MyTeams board in the main page
     let deleteTeam = async () => {
 
         let corsAnywhere = '';

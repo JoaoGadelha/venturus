@@ -4,14 +4,21 @@ import { Context } from '../../Context'
 import styles from './Statistics.module.css'
 
 const Statistics = () => {
+    // these variables are explained in the Context.js file
     let { teamID, clientData } = useContext(Context);
+    // stores the index of the currently clicked team
     let [teamIndex, setTeamIndex] = useState('');
     let [mostPicked, setMostPicked] = useState(0);
     let [leastPicked, setLeastPicked] = useState(0);
+    // stores the most and least picked players names initials
     let [mostPickedInitials, setMostPickedInitials] = useState('');
     let [leastPickedInitials, setLeastPickedInitials] = useState('');
+    // stores the most and least picked players percentages
     let [mostPickedPercentage, setMostPickedPercentage] = useState('');
     let [leastPickedPercentage, setLeastPickedPercentage] = useState('');
+    
+    // this snippet runs whenever teamID updates its value.
+    // used to update the index of the currently clicked team
     useEffect(() => {
         setMostPicked(0);
         setLeastPicked(0);
@@ -26,6 +33,8 @@ const Statistics = () => {
         }
     }, [teamID])
 
+    // this runs whenever teamIndex changes.
+    // used to find the initials of the most and least picked players
     useEffect(() => {
         let mostAux = 0;
         let leastAux = 0;
@@ -48,6 +57,17 @@ const Statistics = () => {
         }
     }, [teamIndex])
 
+    // function to calculate the percentages of the most and least picked players.
+    // the percentages are calculated between the most and least picked players.
+    // if the most picked player was chosen M times, and the least, L times, then
+    // the percentage for the most picked player is given by M/(M+L)*100 %, and
+    // for the least picked player, L/(M+L)*100%. For example, say that the most
+    // picked player was chosen 30 times and the least picked one, 10 times.
+    // then, the contribution of the most picked player in the total number of times
+    // chosen between these two players is calculated by 30/(30+10). To calculate a
+    // percentage, the result of this calculation is multiplied by 100, resulting in 75%.
+    // For the least picked player, the calculation is 10 /(30+10), resulting in 25% when
+    // multiplied by 100.
     let calcPercentages = () => {
         if (clientData.length > 0 && teamIndex !== '') {
             let totalSum = 0; // total sum of picks from the whole team

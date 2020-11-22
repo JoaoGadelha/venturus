@@ -7,9 +7,13 @@ import { postData } from '../../commonFunctions'
 import ResultItem from './ResultItem/ResultItem'
 import Tag from './Tag/Tag'
 
+
+// page that opens when the user clicks on the create or edit team.
 const Configure = (props) => {
 
+    // these variables are explained in the Context.js file
     let { createTeam, clientData, setClientData, teamID } = useContext(Context);
+    // refs to elements in this component
     let refTeamName = useRef();
     let refTeamType = useRef();
     let refTeamWebsite = useRef();
@@ -27,14 +31,24 @@ const Configure = (props) => {
     let refTeamNameLabel = useRef();
     let refTeamWebsiteLabel = useRef();
     let refSearchResultWindow = useRef();
+    // used to navigate to another route in the frontend site.
+    // in this application, its mainly used to navigate between
+    // the main page and the teams configuration page.
     const history = useHistory();
+    // stores the result of the players name search.
     let [resultArray, setResultArray] = useState([]);
+    // stores the index of the currently clicked team in the MyTeam board.
     let [teamIndex, setTeamIndex] = useState('');
+    // flag that signals if the radio button Real is selected or not
     let [realTypeIsSelected, setRealTypeIsSelected] = useState(true);
+    // stores all the tags in the tags field in the configuration page
     let [tags, setTags] = useState([]);
 
     useEffect(() => {
+        // scrolls to the top of the page when the page is opened.
         window.scrollTo(0, 0);
+
+        // if the client is updating and not creating a new team
         if (!createTeam) {
 
             let index = -1;
@@ -65,6 +79,9 @@ const Configure = (props) => {
         }
     }, [])
 
+    // this code snippet runs whenever teamID changes its value.
+    // used to update the index of the currently clicked team
+    // in the main page
     useEffect(() => {
         let index = -1;
         for (let i = 0; i < clientData[0].teams.length; i++) {
@@ -75,8 +92,8 @@ const Configure = (props) => {
         setTeamIndex(index);
     }, [teamID])
 
-
-
+    // updates the type tag radio button.
+    // switches between the real and fantasy radio buttons.
     const setRadio = (radioNumber) => {
         if (radioNumber === 1) {
             refOuterRadio1.current.style.border = 'solid rgba(0, 0, 0, 0.315) 1px';
@@ -97,12 +114,16 @@ const Configure = (props) => {
         }
     }
 
+    // used to focus on the input field in the tags section in the configuration
+    // page whenever the user clicks on the container surrounding the input field.
     const focusOnTagsInput = () => {
         refInputTags.current.focus();
     }
 
+    // this snippet runs whenever the user types something on the
+    // tags input field and presses either 'enter' or 'semicolons' keys.
+    // updates the state that stores the tags.
     const submitTag = (e) => {
-        console.log(e);
         if (e.charCode === 13 || e.charCode === 59) {
             let auxTags = [...tags];
             auxTags.push({ value: e.target.value, id: '_' + Math.random().toString(36).substr(2, 9) });
@@ -111,6 +132,9 @@ const Configure = (props) => {
         }
     }
 
+    // function callback used to close the tags
+    // whenever the user clicks the 'close'
+    // button
     const closeTag = (id) => {
         let auxTags = [...tags];
         for (let i = 0; i < auxTags.length; i++) {
@@ -121,7 +145,11 @@ const Configure = (props) => {
         setTags(auxTags);
     }
 
+    // performs the search of players by name in the configuration page.
     const nameSearch = (name) => {
+        // if the user is updating an already existing team,
+        // and not creating a new one, then the search can be
+        // made. 
         if (!createTeam) {
             let auxArray = [];
             for (let i = 0; i < clientData[0].teams[teamIndex].team.length; i++) {
@@ -133,6 +161,9 @@ const Configure = (props) => {
         }
     }
 
+    // this snippet runs whenever the user tries to save a team.
+    // verifies if the inputs the user inserted in the interface
+    // are valid or not.
     const validateForm = () => {
         refMessage.current.style.color = 'white';
         refMessage.current.innerHTML = 'Please fill in all the highlighted fields above.'
@@ -170,6 +201,8 @@ const Configure = (props) => {
         return /^(ftp|http|https):\/\/[^ "]+$/.test(str)
     }
 
+    // sends all the info the user inserted in the interface 
+    // to the backend to be stored in MongoDB Atlas.
     const clickSaveBtn = async () => {
         let readyToSend = validateForm();
         let selectedType;
@@ -191,7 +224,6 @@ const Configure = (props) => {
                 tags: tags,
                 formation: refFormation.current.value
             }
-            console.log(data);
             if (createTeam) {
                 destiny = 'createTeam'
             } else {
@@ -200,6 +232,7 @@ const Configure = (props) => {
             let url = corsAnywhere + 'https://venturus.herokuapp.com/' + destiny;
             let answer = await postData(url, data);
             setClientData(answer);
+           // navigates to the '/' route, a.k.a. the main page
             history.push("/");
         }
     }

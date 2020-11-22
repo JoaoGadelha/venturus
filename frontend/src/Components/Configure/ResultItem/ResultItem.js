@@ -1,6 +1,9 @@
 import React from 'react'
 import styles from './ResultItem.module.css'
 
+
+// implements one item of the results of the player search in the configuration page.
+// Each item displays the name, nacionality and age of one player.
 const ResultItem = (props) => {
     return (
         <div className={styles.container}>

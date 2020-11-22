@@ -8,10 +8,17 @@ import MyTeamsItem from '../MyTeamsItem/MyTeamsItem'
 
 const MyTeams = () => {
     const history = useHistory();
+    // these variables are explained in the Context.js file
     let { setCreateTeam, clientData, setClientData } = useContext(Context);
+    // used in the carousel for the phone version. 
+    // signals which team must be displayed in the 
+    // carousel
     let [currentTeam, setCurrentTeam] = useState(0);
 
 
+    // updates currentTeam with the index of the 
+    // team that must be displayed in the carousel
+    // in the phone version
     const updateCarousel = (direction) => {
         if (direction === 1) {
             if (currentTeam + 1 <= clientData[0].teams.length - 1) {
