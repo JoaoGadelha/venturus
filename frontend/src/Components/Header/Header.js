@@ -5,8 +5,14 @@ import logo from './img/venturusLogo.png'
 const Header = () => {
     return (
         <div className={styles.container}>
-            <img src={logo}></img>
-            <h1 className={styles.h1}>Squad Management Tool</h1>
+            <div className={styles.logo}>
+                <img src={logo}></img>
+                <h1 className={styles.h1}>Squad Management Tool</h1>
+            </div>
+            <div className={styles.client}>
+                <div className={styles.name}>John Doe</div>
+                <div className={styles.initials}>JD</div>
+            </div>
         </div>
     )
 }

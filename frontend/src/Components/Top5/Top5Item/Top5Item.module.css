@@ -1,0 +1,15 @@
+.container {
+    border-radius: 5px;
+    background: white;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 80fr 20fr;
+    font-size: 11px;
+    width: 98%;
+    height: 85%;
+    font-weight: bold;
+}
+
+.container>* {
+    margin-left: 10px;
+}

@@ -1,9 +1,32 @@
 .container {
+width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  row-gap: 20px;
+  column-gap: 40px;
   place-items: center;
-  height: 90vh;
   background: #f7f3f7;
+  padding: 20px 40px;
+  
+}
+
+
+.containerDesktop {
+  width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 20px;
+    column-gap: 40px;
+    place-items: center;
+    background: #f7f3f7;
+    padding: 20px 40px;
+
+}
+
+.containerDesktop > * {
+  box-shadow: 0 0px 30px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+  
 }
 
 .header {
@@ -18,4 +41,14 @@
 
 .footer {
   grid-column: span 2;
+}
+
+@media (max-width: 800px) {
+  .container {
+    display: block;
+  }
+
+  .container > * {
+    margin-bottom: 20px;
+  }
 }

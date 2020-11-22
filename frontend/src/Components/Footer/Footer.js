@@ -4,7 +4,7 @@ import styles from './Footer.module.css'
 const Footer = () => {
     return (
         <div className={styles.container}>
-            FOOTER
+            2020 - All rights reserved
         </div>
     )
 }

@@ -1,6 +1,10 @@
 .container {
-    height: 10vh;
+    height: 5vh;
     background: #e9e3e9;
     width: 100%;
-    
+    display: grid;
+    place-items: center;
+    z-index: 100;
+
+    font-size: 12px;
 }

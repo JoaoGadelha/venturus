@@ -3,9 +3,11 @@
     width: 100%;
     background: linear-gradient(#bc3d7b, #652e86);
     border-radius: 10px;
-    display: flex;
-    justify-content: space-evenly;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
     align-items: center;
+    position: relative;
 }
 
 .most, .least {
@@ -24,4 +26,71 @@
     font-size: 60px;
     font-weight: bold;
 
+}
+
+.MostPickedTag, .LeastPickedTag, .MostPickedPercentage, .LeastPickedPercentage {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+}
+
+.MostPickedTag {
+    top: 12%;
+    left: 10%;
+}
+
+.LeastPickedTag {
+    top: 12%;
+    left: 60%;
+}
+
+.MostPickedPercentage {
+    top: 30%;
+    left: 36%;
+    border-bottom: solid white 1px;
+}
+
+.LeastPickedPercentage {
+    top: 30%;
+    left: 85%;
+    border-bottom: solid white 1px;
+}
+
+.verticalLine {
+    position: absolute;
+    left: 50%;
+    width: 1px;
+    height: 100%;
+    background: rgba(255,255,255,0.2);
+}
+
+.circle {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: solid rgba(255,255,255,0.2) 1px;
+    border-radius: 50%;
+}
+
+@media (max-width: 800px ) {
+    .MostPickedTag {
+        top: 12%;
+        left: 8%;
+    }
+    
+    .LeastPickedTag {
+        top: 12%;
+        left: 56%;
+    }
+    
+    .MostPickedPercentage {
+        top: 80%;
+        left: 16%;
+    }
+    
+    .LeastPickedPercentage {
+        top: 80%;
+        left: 68%;
+    }
 }

@@ -1,21 +1,61 @@
 .container {
     grid-row: span 2;
     width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 30px auto;
+    
     place-items: center;
     border-radius: 5px;
     background: white;
-    padding: 20px;
-    margin: 0;
+    position: relative;
+    height: 620px;
+    overflow: auto;
     
+}
+
+.containerDesktop {
+    width: 100%;
+    
+    place-items: center;
+    border-radius: 5px;
+    background: white;
+    position: relative;
+    height: 620px;
+    overflow: auto;
+}
+
+.containerDesktop>* {
+    padding: 20px;
+}
+
+.firstLine {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    border-bottom: solid rgba(0, 0, 0, 0.1) 1px;
+}
+
+.secondLine>* {
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.secondLine {
+    display: grid;
+    grid-template-columns: 150px 200px auto;
+}
+
+.secondLine .firstSelector {
+    display: flex;
+}
+
+.secondLine .secondSelector {
+    display: flex;
 }
 
 .title {
     color: #5a328d;
     font-size: 25px;
     font-weight: bold;
+    margin-left: 20px;
 }
 
 .newTeamBtn {
@@ -29,4 +69,74 @@
     cursor: pointer;
     justify-self: end;
     box-shadow: 0 10px 20px rgba(206, 11, 206, 0.514);
+}
+
+.secondColumn {
+    display: flex;
+}
+
+.teams {
+    width: 100%;
+    grid-column: span 2;
+}
+
+.sortByNameBtns {
+    position: relative;
+    top: -1px;
+    right: -10px;
+}
+
+.sortByNameBtns * {
+    display: grid;
+    place-items: center;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.sortByNameBtns i:nth-child(1) {
+    transform: rotate(90deg)
+}
+
+.sortByNameBtns i:nth-child(2) {
+    transform: rotate(-90deg);
+    position: absolute;
+    top: 10px;
+    right: -1px;
+}
+
+.sortByDescriptionBtns {
+    display: block;
+    font-size: 12px;
+    position: relative;
+    right: -10px;
+}
+
+.sortByDescriptionBtns i:nth-child(1) {
+    transform: rotate(90deg);
+}
+
+.sortByDescriptionBtns i:nth-child(2) {
+    transform: rotate(-90deg);
+    position: relative;
+    top: 10px;
+    right: 3px;
+}
+
+.containerMobile {
+    display: none;
+}
+
+@media (max-width: 500px) {
+    .containerMobile {
+        height: 300px;
+        display: block;
+    }
+    .carouselFrame {
+        height: 200px;
+        width: 80%;
+        margin: 0 auto;
+    }
+    .container {
+        display: none;
+    }
 }
