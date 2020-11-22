@@ -363,12 +363,48 @@
     .searchMessage {
         width: 300px;
         margin: 0 auto;
+        
     }
 
     .h2 {
         text-align: center;
         margin: 20px 0;
+        
 
     }
 
+}
+
+@media (max-width: 500px ) {
+    .field {
+        width: 100%;
+    }
+    .fieldTitleContainer {
+            
+        margin:0;
+        margin-left:-10px;
+    }
+
+    .search {
+        display: block;
+        text-align: center;
+        
+    }
+
+    .search > * {
+        margin: 10px auto;
+    }
+
+    .searchMessage {
+        width: 200px;
+    }
+
+    .fieldLine {
+        width: 352px;
+    }
+
+    .radioContainer > * {
+        margin-right: 10px;
+    }
+   
 }

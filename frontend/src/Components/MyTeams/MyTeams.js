@@ -14,9 +14,13 @@ const MyTeams = () => {
 
     const updateCarousel = (direction) => {
         if (direction === 1) {
-            setCurrentTeam(val => val + 1);
+            if (currentTeam + 1 <= clientData[0].teams.length - 1) {
+                setCurrentTeam(val => val + 1);
+            }
         } else {
-            setCurrentTeam(val => val - 1);
+            if (currentTeam - 1 >= 0) {
+                setCurrentTeam(val => val - 1);
+            }
         }
     }
 
@@ -56,18 +60,22 @@ const MyTeams = () => {
     return (
         <div className={styles.container}>
             <div className={styles.containerMobile}>
-                MOBILE
                 <div className={styles.carouselFrame}>
                     <div className={styles.carousel}>
                         {clientData.length > 0 ? clientData[0].teams.map((item, i) => i === currentTeam ? <MyTeamsItem data={item} isMobile={true} /> : '') : ''}
 
                     </div>
-                    
+
                 </div>
                 <div className={styles.buttonsContainer}>
-                        <div className={styles.leftButton} onClick={() => updateCarousel(-1)}>-</div>
-                        <div className={styles.rightButton} onClick={() => updateCarousel(+1)}>+</div>
-                    </div>
+                    <div className={styles.leftButton} onClick={() => updateCarousel(-1)}><i class="fas fa-chevron-left"></i></div>
+                    <button onClick={() => {
+                        setCreateTeam(true);
+                        history.push("/configure")
+                    }
+                    } className={styles.newTeamBtn}>+</button>
+                    <div className={styles.rightButton} onClick={() => updateCarousel(+1)}><i class="fas fa-chevron-right"></i></div>
+                </div>
             </div>
             <div className={styles.containerDesktop} >
                 <div className={styles.firstLine}>

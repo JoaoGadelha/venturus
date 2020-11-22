@@ -20,18 +20,25 @@ const MyTeamsItem = (props) => {
     }, [])
 
     useEffect(() => {
-        if (props.data.teamID === teamID) {
-            refContainer.current.style.background = '#f7eef7';
+        if (!props.isMobile) {
+            if (props.data.teamID === teamID) {
+                refContainer.current.style.background = '#f7eef7';
+                refContainer.current.style.borderRadius = '5px';
+                refTeamName.current.style.color = '#b13f7d';
+                refDescription.current.style.color = '#b13f7d';
+                refTools.current.style.display = 'flex';
+            } else {
+                refContainer.current.style.background = 'white';
+                refContainer.current.style.borderRadius = '0';
+                refTeamName.current.style.color = 'black';
+                refDescription.current.style.color = 'black';
+                refTools.current.style.display = 'none';
+            }
+        } else {
             refContainer.current.style.borderRadius = '5px';
             refTeamName.current.style.color = '#b13f7d';
-            refDescription.current.style.color = '#b13f7d';
-            refTools.current.style.display = 'flex';
-        } else {
-            refContainer.current.style.background = 'white';
-            refContainer.current.style.borderRadius = '0';
-            refTeamName.current.style.color = 'black';
             refDescription.current.style.color = 'black';
-            refTools.current.style.display = 'none';
+            refTools.current.style.display = 'flex';
         }
     }, [teamID])
 

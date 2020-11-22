@@ -40,8 +40,7 @@
         color: white;
         margin-right: 10px;
     }
-    .logo {
-    }
+    .logo {}
     .h1 {
         font-size: 14px;
     }
@@ -53,5 +52,30 @@
     .name {
         font-size: 14px;
         width: 70px;
+    }
+}
+
+@media (max-width: 500px) {
+    .container {
+        display: grid;
+        grid-template-columns: 80fr 20fr;
+    }
+    .name {
+        color: white;
+        margin-right: 10px;
+    }
+    .h1 {
+        font-size: 14px;
+    }
+    .client {
+        width: 10%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-left: -10px;
+        
+    }
+    .name {
+        font-size: 14px;
+        width: 100%;
     }
 }

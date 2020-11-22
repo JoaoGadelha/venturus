@@ -1,19 +1,16 @@
 .container {
     grid-row: span 2;
     width: 100%;
-    
     place-items: center;
     border-radius: 5px;
     background: white;
     position: relative;
     height: 620px;
     overflow: auto;
-    
 }
 
 .containerDesktop {
     width: 100%;
-    
     place-items: center;
     border-radius: 5px;
     background: white;
@@ -128,15 +125,31 @@
 
 @media (max-width: 500px) {
     .containerMobile {
+        display: grid;
+        place-items: center;
         height: 300px;
-        display: block;
+        padding-bottom: 20px;
+        
+    }
+    .containerMobile>* {
+        margin: 0 auto;
+        text-align: center;
+    }
+    .container {
+        height: 300px;
+        
     }
     .carouselFrame {
         height: 200px;
         width: 80%;
         margin: 0 auto;
     }
-    .container {
+    .containerDesktop {
         display: none;
+    }
+    .buttonsContainer {
+        display: flex;
+        width: 100%;
+        justify-content: space-evenly;
     }
 }

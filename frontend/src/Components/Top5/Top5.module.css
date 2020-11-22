@@ -48,3 +48,15 @@
     place-items: center;
     border-radius: 5px;
 }
+
+@media (max-width: 500px ) {
+.container {
+    display: block;
+    height: auto;
+}
+
+.title {
+    padding: 20px 0;
+}
+
+}
