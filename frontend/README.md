@@ -8,6 +8,8 @@ The app was built with React.js and illustrates an interface for creating and co
 ## Technologies used
 For this app, the frontend was built with React.js, while the API was built by me with Node.js/Express.js and the information about teams and clients was stored in MongoDB Atlas, which acts as an online MongoDB database.
 
+The backend is live at https://venturus.herokuapp.com/ and the frontend is live at https://joaoricardotg-venturus.netlify.app/.
+
 ## Implementation
 
 The implementation is composed of an App.js file, that calls all the other components in the app. The app contains 4 mains components, MyTeams, Top5, Statistics and Configure, where the three first components are present in the main page, and the last one is present in the configuration page.
