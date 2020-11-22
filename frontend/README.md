@@ -5,8 +5,10 @@ This project was developed as a job test for Venturus.</h1>
 <img src="https://img.shields.io/badge/made%20by-joaoricardotg-blue.svg" >
 
 ## The App
-The app was built with React.js and illustrates an interface for creating and configuring soccer teams. It is composed of two pages, one that displays all the teams the user has created, a board displaying average ages of players and another board displaying percentages of picks for a chosen team. The second page is opened whenever the user wants to create a new team or configure an already existing one, displaying input fields to define the team's name, a description of the team, tags, two radio buttons to define if the team is a fictional or real one and a website URL for the team. The user can also define the formation of the team and position of each player in the field. <br />
+The app was built with React.js and illustrates an interface for creating and configuring soccer teams. It is composed of two pages, one that displays all the teams the user has created, a board displaying average ages of players and another board displaying percentages of picks for a chosen team.  
 <img src="./1.png" width="100%">
+The second page is opened whenever the user wants to create a new team or configure an already existing one, displaying input fields to define the team's name, a description of the team, tags, two radio buttons to define if the team is a fictional or real one and a website URL for the team. The user can also define the formation of the team and position of each player in the field.
+<img src="./2.png" width="100%">
 
 ## Technologies used
 For this app, the frontend was built with React.js, while the API was built by me with Node.js/Express.js and the information about teams and clients was stored in MongoDB Atlas, which acts as an online MongoDB database.
