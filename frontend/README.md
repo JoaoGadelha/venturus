@@ -15,6 +15,14 @@ For this app, the frontend was built with React.js, while the API was built by m
 
 The backend is live at https://venturus.herokuapp.com/ and the frontend is live at https://joaoricardotg-venturus.netlify.app/.
 
+## Backend routes
+There are 5 routes for the backend, all POST's receiving JSON as requests. 
+### `POST /createUsr` 
+Receives an JSON in the format {name, password, email} to create a new account for a client.
+
+### `POST /createTeam`
+Receives an JSON in the format {teamName, description, website, type, tags, formation}. Creates a team with a random number of players between 22 and 25 players. The team composition such as names of each player, nacionality, age, number of times each player was chosen, are all generated randomly. Names are provided by the API "names.drycodes", ages are generated between 18 and 40 years, the number of picks for each player varies between 5 and 50 and the player nacionality is provided by the API "REST Countries"
+
 ## Implementation
 
 The implementation is composed of an App.js file, that calls all the other components in the app. The app contains 4 mains components, MyTeams, Top5, Statistics and Configure, where the three first components are present in the main page, and the last one is present in the configuration page.
