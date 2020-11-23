@@ -19,7 +19,7 @@ The backend is live at https://venturus.herokuapp.com/ and the frontend is live 
 There are 5 routes for the backend, all POST's receiving JSON as requests. 
 ### `POST /createUsr` 
 Receives an JSON in the format {name, password, email} to create a new account for a client.
-### `
+
 
 ### `POST /createTeam`
 Receives an JSON in the format {teamName, description, website, type, tags, formation}. Creates a team with a random number of players between 22 and 25 players. The team composition such as names of each player, nacionality, age, number of times each player was chosen, are all generated randomly. Names are provided by the API "names.drycodes", ages are generated between 18 and 40 years, the number of picks for each player varies between 5 and 50 and the player nacionality is provided by the API "REST Countries"
