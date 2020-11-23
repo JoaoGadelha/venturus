@@ -13,7 +13,7 @@ The second page is opened whenever the user wants to create a new team or config
 ## Technologies used
 For this app, the frontend was built with React.js, while the API was built by me with Node.js/Express.js and the information about teams and clients was stored in MongoDB Atlas, which acts as an online MongoDB database.
 
-The backend is live at https://venturus.herokuapp.com/ and the frontend is live at https://joaoricardotg-venturus.netlify.app/.
+The backend is live at https://venturus.herokuapp.com/ and the frontend is live at https://joaoricardotg-venturus.netlify.app/. The backend site doesn't show anything when accessed by clicking the herokuapp link, but it's used by the frontend fetch operations.
 
 ## Backend routes
 There are 5 routes for the backend, all POST's receiving JSON as requests. 
