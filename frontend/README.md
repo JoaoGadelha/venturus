@@ -31,7 +31,7 @@ Receives an JSON in the format {id, teamID, teamName, description, website, type
 Receives an JSON in the format {id} for the id of the client present in the database and returns his info, such as the teams present in his/her account.
 
 ### `POST /deleteTeam`
-Receives an JSON in the format {id, teamID} in order to delete an specific team from the database.
+Receives a JSON in the format {id, teamID} in order to delete an specific team from the database.
 
 ## Implementation
 
